@@ -10,20 +10,20 @@ Source Code
 💻 GitHub: https://github.com/Mohammad-Aahil/ecommerce-app
 
 Features
-Product listing from external API
-Dynamic product details page
-Shopping cart management
-TanStack Query for data fetching and caching
-Context API for global state management
-Client-side routing with React Router
-Loading and error handling
-Responsive user interface
+* Product listing from external API
+* Dynamic product details page
+* Shopping cart management
+* TanStack Query for data fetching and caching
+* Context API for global state management
+* Client-side routing with React Router
+* Loading and error handling
+* Responsive user interface
 
 Technologies Used
-React.js
-React Router
-TanStack Query
-Context API
-JavaScript (ES6+)
-Tailwind CSS
-Vite
+* React.js
+* React Router
+* TanStack Query
+* Context API
+* JavaScript (ES6+)
+* Tailwind CSS
+* Vite
