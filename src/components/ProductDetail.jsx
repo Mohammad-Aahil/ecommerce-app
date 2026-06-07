@@ -1,9 +1,11 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import { useCart } from "../context/CartContext";
 
 export default function ProductDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { addCart } = useCart();
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["product", id],
@@ -36,6 +38,8 @@ export default function ProductDetail() {
         {" "}
         Go Back
       </button>
+
+      <button onClick={() => addCart(data)}>Add to Cart 🛒</button>
     </div>
   );
 }

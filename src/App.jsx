@@ -3,8 +3,12 @@ import React from "react";
 import { Route, Routes, Link } from "react-router-dom";
 import ProductDetail from "./components/ProductDetail";
 import ProductsList from "./components/ProductsList";
+import { useCart } from "./context/CartContext";
 
 const App = () => {
+  const { cart } = useCart();
+  console.log(cart);
+
   return (
     <div>
       <h1>Products Cart</h1>
