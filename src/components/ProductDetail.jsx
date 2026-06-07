@@ -24,22 +24,28 @@ export default function ProductDetail() {
   if (error) return <p>Error loading product</p>;
 
   return (
-    <div>
-      <h2>{data.title}</h2>
-      <img src={data.image} width="150" />
-      <p>₹ {data.price}</p>
-      <p>{data.description}</p>
-
+    <div className="p-6 border rounded shadow">
+      <img className="h-60 mx-auto" src={data.image} />
+      <h2 className="text-xl font-bold mt-4">{data.title}</h2>
+      <p className="text-green-600 font-bold">₹ {data.price}</p>
+      <p className="mt-2">{data.description}</p>
+      <button
+        className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        onClick={() => {
+          addCart(data);
+        }}
+      >
+        Add to Cart 🛒
+      </button>
       <button
         onClick={() => {
           navigate(-1);
         }}
+        className="mt-4 bg-blue-500 text-white px-5 ml-5 py-2 rounded hover:bg-blue-600"
       >
         {" "}
         Go Back
-      </button>
-
-      <button onClick={() => addCart(data)}>Add to Cart 🛒</button>
+      </button>{" "}
     </div>
   );
 }

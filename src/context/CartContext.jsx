@@ -7,7 +7,6 @@ export default function CartProvider({ children }) {
 
   const addCart = (product) => {
     const exists = cart.find((item) => item.id === product.id);
-
     if (exists) return;
 
     setCart([...cart, product]);

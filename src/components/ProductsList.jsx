@@ -19,23 +19,28 @@ export default function ProductsList() {
 
   /* Rendering Data */
   return (
-    <div>
-      {(data || []).map((product) => {
-        return (
-          <div key={product.id} className="border my-5 w-50">
-            <img src={product.image} alt={product.title} className="w-24 " />
-
-            <Link to={`/products/${product.id}`}>
-              <h3 className="">{product.title}</h3>
-            </Link>
-            <p>
-              <strong>Price: </strong>
-              {product.price}
-            </p>
-            <br />
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <div className="grid md:grid-cols-3 grid-cols-2 gap-4">
+        {(data || []).map((product) => {
+          return (
+            <div
+              className="border p-4 rounded shadow hover:shadow-2xl transition"
+              key={product.id}
+            >
+              <img
+                className="h-40 mx-auto"
+                src={product.image}
+                alt={product.title}
+              />
+              <h3 className="font-semibold">{product.title}</h3>
+              <p className="text-green-600 font-bold">₹ {product.price}</p>
+              <button className="mt-2 bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
+                <Link to={`/products/${product.id}`}>View</Link>
+              </button>
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 }
