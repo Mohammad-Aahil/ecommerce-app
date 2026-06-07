@@ -13,6 +13,10 @@ const App = () => {
       return res.json();
     },
   });
+
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>Failed to fetch the data from API</p>;
+
   return (
     <div>
       <h1>Products Cart</h1>
